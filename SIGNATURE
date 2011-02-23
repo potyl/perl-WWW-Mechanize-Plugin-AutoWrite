@@ -1,0 +1,32 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.55.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 4158515f4d7dac421ba7584a5c5bd58803d4affe Changes
+SHA1 58a9e85d8ac31c67b58fa728a089ff13d2fd7c1d MANIFEST
+SHA1 558016e3861a7dd7a2e2da37a86e38944eccff05 META.yml
+SHA1 b6214236fb0cc70cfb8f9f755ff9d1dc473b8681 Makefile.PL
+SHA1 9a2a4b9109deb7a42a8ebf14ddf429c0a7dc61d5 README
+SHA1 4b6a17e5a4e0254c5f3275f7cf9bbb5a20da4b8a lib/WWW/Mechanize/Plugin/AutoWrite.pm
+SHA1 41533fbd463e42d2ecf1e119eca910c16809d13e t/00-distribution.t
+SHA1 4aeb184c9bed26ab6c3be1ebdb8470c0cb353b1f t/00-signature.t
+SHA1 0d0786acae51bef5afd232d1c7a4a116d501f71c t/01-WWW-Mechanize-Plugin-AutoWrite.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFG9588uzJBASXpqvsRAjz5AJ93QJResFjfl0j8XoF6aWCdRCjh/ACgrW5R
+CCCtrsMAIcfOj/j44dqRjFA=
+=RBt3
+-----END PGP SIGNATURE-----
