@@ -1,16 +1,17 @@
-WWW-Mechanize-Plugin-AutoWrite version 0.01
-===========================================
+WWW-Mechanize-Plugin-AutoWrite
+==============================
 
-The README is used to introduce the module and provide instructions on
-how to install the module, any machine dependencies it may have (for
-example C compilers and installed libraries) and any other information
-that should be provided before the module is installed.
+This module provides a plugin for WWW::Mechanize that automatically saves the
+contents of the last page accessed. The module can also save the whole HTTP
+session by saving the pages as well as the HTTP headers from the request and the
+response.
 
-A README file is required for CPAN modules since CPAN extracts the
-README file from a module distribution so that people browsing the
-archive can use it get an idea of the modules uses. It is usually a
-good idea to provide version information here so that people can
-decide whether fixes for the module are worth downloading.
+This plugin is simply activated by loading it and by instruction the
+WWW::Mechanize where to store the files. Then the mechanize pages will be saved
+automatically as they are fetched. This is true for any kind of HTTP request:
+get, post, etc.
+
+See the file "Changes" for all changes made to this software.
 
 INSTALLATION
 
@@ -23,18 +24,22 @@ To install this module type the following:
 
 DEPENDENCIES
 
-This module requires these other modules and libraries:
+This module requires these other modules and libraries at runtime:
 
-  blah blah blah
+  WWW::Mechanize
+  File::Slurp
+  MIME::Types
+  File::Path
+  File::Spec
+  File::Basename
 
 COPYRIGHT AND LICENCE
 
 Put the correct copyright and licence information here.
 
 Copyright (C) 2007 by Jozef Kutej
+Copyright (C) 2008 by Jozef Kutej and Emmanuel Rodriguez
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.8 or,
 at your option, any later version of Perl 5 you may have available.
-
-

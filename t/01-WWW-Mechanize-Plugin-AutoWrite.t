@@ -1,3 +1,4 @@
+#!/usr/bin/perl
 
 use Test::More; # 'no_plan';
 BEGIN { plan tests => 6 };
@@ -42,7 +43,7 @@ SKIP: {
 	$mech->autowrite($TEST_TEMP_FILENAME);
 	$mech->get($TEST_URL);
 	
-	eq_or_diff($cpan, scalar read_file($TEST_TEMP_FILENAME), 'check if the file is created and filled properly.');
+	eq_or_diff(scalar read_file($TEST_TEMP_FILENAME), $cpan, 'check if the file is created and filled properly.');
 
 	$mech = WWW::Mechanize->new();
 	$mech->autowrite($TEST_TEMP_FILENAME);

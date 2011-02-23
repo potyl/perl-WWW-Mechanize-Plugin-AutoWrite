@@ -6,5 +6,7 @@ t/00-distribution.t
 t/00-signature.t
 t/01-WWW-Mechanize-Plugin-AutoWrite.t
 lib/WWW/Mechanize/Plugin/AutoWrite.pm
+t/pod-coverage.t
+t/pod.t
 META.yml                                 Module meta-data (added by MakeMaker)
 SIGNATURE                                Public-key signature (added by MakeMaker)
