@@ -13,4 +13,3 @@ examples/bratislava-pm.pl
 examples/olympic.pl
 examples/search-cpan.pl
 META.yml                                 Module meta-data (added by MakeMaker)
-SIGNATURE                                Public-key signature (added by MakeMaker)

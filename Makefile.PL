@@ -26,5 +26,4 @@ WriteMakefile(
 		)
 		: ()
 	),
-	( MM->can('signature_target') ? (SIGN => 1) : () ),
 );
