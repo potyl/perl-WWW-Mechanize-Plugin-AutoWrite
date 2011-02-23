@@ -1,6 +1,7 @@
 Changes
 Makefile.PL
 MANIFEST
+MANIFEST.SKIP
 README
 t/00-distribution.t
 t/00-signature.t
