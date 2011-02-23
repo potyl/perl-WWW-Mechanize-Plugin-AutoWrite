@@ -1,5 +1,8 @@
 Revision history for Perl extension WWW::Mechanize::Plugin::AutoWrite.
 
+0.05  Sat Oct 11 09:18:26 CEST 2008
+	- The dependency to Class::Accessor was missing.
+
 0.04  Wed Oct  8 20:58:06 CEST 2008
 	- API change in order to inject less method into WWW::Mechanize.
 

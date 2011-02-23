@@ -14,15 +14,15 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 7090be73991c8d68017aa11f29e5f58e3100838e Changes
+SHA1 0b281cfa36012e5643c812e89c4881bfd88b5cfe Changes
 SHA1 fa6a313a6c17c7e31cdee36a350115715977eb50 MANIFEST
-SHA1 71b1b41a7df7ef4fa68207bad363724bb57ef5d2 META.yml
-SHA1 63512488070d11fd02857f4e2654b73e6f514450 Makefile.PL
+SHA1 1e267535f04cbb1ebcffe7dd4e563398699764a3 META.yml
+SHA1 6fd21a287192a290fb5defc9b2665645c4bd8abf Makefile.PL
 SHA1 269ac28f8ee1ef886200647a6420026b94afc297 README
 SHA1 c0b2458c6c90338cce114bc9aa7e1ce1cf6b0e25 examples/bratislava-pm.pl
 SHA1 98e8917c185306fa27fa7ea369038bf4231b385d examples/olympic.pl
 SHA1 a477dfd6600220ed3ca4e4da85e63f4b40ba3ca8 examples/search-cpan.pl
-SHA1 f8f64f48f4b00c19926e53860110efb607970931 lib/WWW/Mechanize/Plugin/AutoWrite.pm
+SHA1 e42910694f7cfd0609d72bc12c7df01b54288021 lib/WWW/Mechanize/Plugin/AutoWrite.pm
 SHA1 41533fbd463e42d2ecf1e119eca910c16809d13e t/00-distribution.t
 SHA1 4aeb184c9bed26ab6c3be1ebdb8470c0cb353b1f t/00-signature.t
 SHA1 57e4fcf185502d33bbe6276d00bcfa5a14943830 t/01-WWW-Mechanize-Plugin-AutoWrite.t
@@ -31,7 +31,7 @@ SHA1 640935336dc1123c0069bcf5432bcaedc2cf22d3 t/pod.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.6 (GNU/Linux)
 
-iD8DBQFI7QfItO1Iin/WdnwRAjxyAKDc9P+8BB3SFqz+PwbrP3Ra0XEPBQCgl6b2
-ipcf2FObwTqqnYWAfvQF648=
-=aeCr
+iD8DBQFI8FPYtO1Iin/WdnwRAnrsAKCDV9j75Ag2ABEKmazHfRZahTwjgwCfUjJK
+Gr/BnIUHrR7kVQPva/4hQGc=
+=1kO0
 -----END PGP SIGNATURE-----

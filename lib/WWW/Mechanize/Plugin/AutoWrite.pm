@@ -45,8 +45,6 @@ or:
 	# /tmp/mech/last.html
 	$mech->follow_link(text => 'Galego');
 
-
-
 =head1 DESCRIPTION
 
 L<WWW::Mechanize::Plugin::AutoWrite> overrides the method 
@@ -115,7 +113,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use File::Slurp qw{ write_file };
 use File::Path qw{ mkpath };
