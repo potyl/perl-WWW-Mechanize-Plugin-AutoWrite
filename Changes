@@ -1,4 +1,7 @@
 Revision history for Perl extension WWW::Mechanize::Plugin::AutoWrite.
 
+0.02  Mon Sep 25 15:52:32 2007
+	- changing ->request instead of ->get so that also submit, submit_form, ... will be affected
+
 0.01  Mon Sep 24 11:48:32 2007
 	- initial version

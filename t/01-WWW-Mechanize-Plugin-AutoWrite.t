@@ -1,6 +1,6 @@
 
 use Test::More; # 'no_plan';
-BEGIN { plan tests => 5 };
+BEGIN { plan tests => 6 };
 
 use Test::Differences;
 
@@ -13,7 +13,8 @@ BEGIN {
 
 my $mech = WWW::Mechanize->new();
 
-my $TEST_URL = 'http://www.cpan.org';
+my $TEST_URL  = 'http://www.cpan.org';
+my $TEST_URL2 = 'http://search.cpan.org';
 
 my ($fh, $TEST_TEMP_FILENAME) = tempfile();
 close($fh);
@@ -42,6 +43,21 @@ SKIP: {
 	$mech->get($TEST_URL);
 	
 	eq_or_diff($cpan, scalar read_file($TEST_TEMP_FILENAME), 'check if the file is created and filled properly.');
+
+	$mech = WWW::Mechanize->new();
+	$mech->autowrite($TEST_TEMP_FILENAME);
+	$mech->get($TEST_URL2);
+
+	unlink $TEST_TEMP_FILENAME;
+	$mech->submit_form(
+		'form_name' => 'f',
+		'fields'    => {
+			'query' => 'WWW::Mechanize::Plugin::AutoWrite',
+			'mode'  => 'module', 
+		},
+	);
+
+	like(scalar read_file($TEST_TEMP_FILENAME), qr{WWW::Mechanize plugin}, 'check submit search results');
 }
 
 

@@ -12,12 +12,23 @@ WWW::Mechanize::Plugin::AutoWrite - WWW::Mechanize plugin to automaticaly write 
 	$mech = WWW::Mechanize->new();
 	$mech->autowrite('/tmp/mech.html');
 	
-	$mech->get('http://www.cpan.org');		#now the $mech->content of the get is automaticali stored to /tmp/mech.html
+	$mech->get('http://search.cpan.org');
+	#now the $mech->content of the GET is automaticaly stored to /tmp/mech.html
+
+	$mech->submit_form(
+		'form_name' => 'f',
+		'fields'    => {
+			'query' => 'WWW::Mechanize::Plugin::AutoWrite',
+			'mode'  => 'module', 
+		},
+	);
+	#now the $mech->content of the POST result is automaticaly stored to /tmp/mech.html
 
 =head1 DESCRIPTION
 
-WWW::Mechanize::Plugin::AutoWrite overrides WWW::Mechanize::get method and every time the $mech->get() is called
-it stores $mech->content() to a file set by $mech->autowrite() method.
+WWW::Mechanize::Plugin::AutoWrite overrides WWW::Mechanize::request method
+and every time the $mech->get or ->submit, ->submit_form, etc. is called
+it stores $mech->content() to a filename set by $mech->autowrite() method.
 
 You can then use epiphany browser to see this file. When ever epiphany detects that the content
 of the file changed it will reload it. So if you have a double screen you can execute code on
@@ -30,14 +41,26 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use File::Slurp qw{ write_file };
 
-my $original_www_mechanize_get;
+my $original_www_mechanize_request;
 
 BEGIN {
-	 $original_www_mechanize_get = \&WWW::Mechanize::get;
+	 $original_www_mechanize_request = \&WWW::Mechanize::request;
+}
+
+
+sub _write_to_file {
+	my $mech = shift;
+
+	#write to file if defined
+	my $autowrite_filename = $mech->{'autowrite'};
+
+	if (defined $autowrite_filename) {
+		write_file($autowrite_filename, $mech->content);
+	}
 }
 
 
@@ -46,28 +69,25 @@ sub WWW::Mechanize::autowrite {
 
 	# set
 	if (@_) {
-		$self->{'autowrite_filename'} = shift;
+		$self->{'autowrite'} = shift;
 	}
 	# get
 	else {
-		return $self->{'autowrite_filename'};
+		return $self->{'autowrite'};
 	}
 }
 
 
 no warnings qw{ redefine };
 
-sub WWW::Mechanize::get {
+sub WWW::Mechanize::request {
 	my $self = shift;
-
-	my $get_return = $original_www_mechanize_get->($self, @_);
-
-	my $autowrite_filename = $self->{'autowrite_filename'};
-	if (defined $autowrite_filename) {
-		write_file($autowrite_filename, $self->content);
-	}
 	
-	return $get_return;
+	my $return = $original_www_mechanize_request->($self, @_);
+
+	_write_to_file($self);
+	
+	return $return;
 }
 
 
@@ -80,7 +100,7 @@ L<http://search.cpan.org/perldoc?WWW::Mechanize::Plugin::Display>
 
 =head1 AUTHOR
 
-Jozef Kutej, E<lt>jk@E<gt>
+Jozef Kutej, E<lt>jozef@kutej.netE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
