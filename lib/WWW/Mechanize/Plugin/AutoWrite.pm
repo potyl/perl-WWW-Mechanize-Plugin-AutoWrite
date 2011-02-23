@@ -113,7 +113,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 use File::Slurp qw{ write_file };
 use File::Path qw{ mkpath };

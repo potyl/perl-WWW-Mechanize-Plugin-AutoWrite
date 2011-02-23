@@ -1,5 +1,8 @@
 Revision history for Perl extension WWW::Mechanize::Plugin::AutoWrite.
 
+0.06  Wed Feb 23 22:31:52 CET 2011
+	- Unit test fix since search.cpan.org changed it's output.
+
 0.05  Sat Oct 11 09:18:26 CEST 2008
 	- The dependency to Class::Accessor was missing.
 
