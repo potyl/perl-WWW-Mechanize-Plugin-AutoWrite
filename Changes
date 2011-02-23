@@ -1,5 +1,8 @@
 Revision history for Perl extension WWW::Mechanize::Plugin::AutoWrite.
 
+0.04  Wed Oct  8 20:58:06 CEST 2008
+	- API change in order to inject less method into WWW::Mechanize.
+
 0.03  Sun Aug 06 19:45:25 2008
 	- Can save the whole HTTP session in a folder, only the last page or both.
 
