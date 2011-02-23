@@ -14,12 +14,12 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 51370d93d3bdc1df43a47e6f5b03e7ba103a4274 Changes
+SHA1 d2b821f5e4b2ad65df3d16c4a5ba11dff6f04e8f Changes
 SHA1 fe5bafa221245cc8d248e2090a52924c0ed19f87 MANIFEST
-SHA1 5e4163cdc646f5e3f97d1f7f029b5adfca9bdf01 META.yml
+SHA1 8dc1eb735730939566a4a2211a26d966240f164b META.yml
 SHA1 a5d0b0a390e9ed67ed5af54c758e7abe0cce6aef Makefile.PL
 SHA1 269ac28f8ee1ef886200647a6420026b94afc297 README
-SHA1 80c659744def46a74e04fe5f1e26863f1a9268e8 lib/WWW/Mechanize/Plugin/AutoWrite.pm
+SHA1 db3394741ea11fead49faad0759c68f04b012b8c lib/WWW/Mechanize/Plugin/AutoWrite.pm
 SHA1 41533fbd463e42d2ecf1e119eca910c16809d13e t/00-distribution.t
 SHA1 4aeb184c9bed26ab6c3be1ebdb8470c0cb353b1f t/00-signature.t
 SHA1 7395d48445d441ec627ba8d29ee27a2e03fb5849 t/01-WWW-Mechanize-Plugin-AutoWrite.t
@@ -28,7 +28,7 @@ SHA1 640935336dc1123c0069bcf5432bcaedc2cf22d3 t/pod.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.6 (GNU/Linux)
 
-iD8DBQFIhN6fAmSu+WWipjERAoH8AJ9uUnzdEYRR27CuqRiKHobpqQ3SUgCfdJyj
-Hpj1+wJiL3rX8SU7GSgBRxc=
-=7r0j
+iD8DBQFImeOvAmSu+WWipjERAp6gAJ9Yh1EoCEpLv+zv6e/7kK8uuraKiACdGL3e
+nhJMHyPtjE+sDycML4wBInw=
+=8Uyu
 -----END PGP SIGNATURE-----

@@ -83,7 +83,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.03_01';
+our $VERSION = '0.03';
 
 use File::Slurp qw{ write_file };
 use File::Path qw{ mkpath };
@@ -119,7 +119,6 @@ sub WWW::Mechanize::autowrite {
 
 	# set
 	if (@_) {
-		delete $self->{'autowrite'};
 		$self->{'autowrite'} = shift;
 	}
 	# get
@@ -144,7 +143,6 @@ sub WWW::Mechanize::autowritedir {
 
 	# set
 	if (@_) {
-		delete $self->{'autowritedir'};
 		$self->{'autowritedir'} = shift;
 	}
 	# get
@@ -153,19 +151,47 @@ sub WWW::Mechanize::autowritedir {
 	}
 }
 
+=head1 METHODS
+
+This module offers the following public methods:
+
+=cut
+
+=head2 autowritedir_reset_counter
+
+Resets the counter used by autowritedir. This only affects the outcome of
+L</autowritedir>.
+
+This can be useful when multiple sessions need to be saved into different
+folders.
+
+	foreach my $entry (@entries) {
+		$mech->autowritedir("/tmp/$entry/");
+		$mech->autowritedir_reset_counter;
+		# Complex mechanize		
+		mechanize_process($mech, $entry);
+	}
+
+=cut
+
+sub WWW::Mechanize::autowritedir_reset_counter {
+	my $self = shift;
+	$self->{'autowritedir_counter'} = 0;
+}
+
 
 #
 # Returns the next iteration of the counter. This method initializes the counter
 # the first time it's invoked.
 #
-sub WWW::Mechanize::_autowrite_inc_counter {
+sub WWW::Mechanize::_autowritedir_inc_counter {
 	my $self = shift;
 	
-	if (! defined $self->{'autowrite_counter'}) {
-		$self->{'autowrite_counter'} = 0;
+	if (! defined $self->{'autowritedir_counter'}) {
+		$self->{'autowritedir_counter'} = 0;
 	}
 	
-	return ++$self->{'autowrite_counter'};
+	return ++$self->{'autowritedir_counter'};
 }
 
 
@@ -203,10 +229,9 @@ sub _write_to_file {
 	# write to multiple files in a folder if autowritedir is set
 	if (my $foldername = $self->autowritedir) {
 		mkpath($foldername);    # works fine with already existing folders
-		
 		# my $encoding = $response->content_encoding;
 
-		my $counter = $self->_autowrite_inc_counter;
+		my $counter = $self->_autowritedir_inc_counter;
 		my $file;
 		
 		# Get the extension of the file based on the mime-type
