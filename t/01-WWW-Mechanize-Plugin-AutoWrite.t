@@ -61,7 +61,7 @@ SKIP: {
 		},
 	);
 
-	like(scalar read_file($TEST_TEMP_FILENAME), qr{WWW::Mechanize plugin}, 'check submit search results');
+	like(scalar read_file($TEST_TEMP_FILENAME), qr{WWW-Mechanize-Plugin-AutoWrite-[0-9]}x, 'check submit search results');
 }
 
 
